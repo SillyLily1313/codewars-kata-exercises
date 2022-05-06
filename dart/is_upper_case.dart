@@ -23,28 +23,16 @@ bool isUpperCase(String str) {
 }
 
 void main() {
-  String str = "c";
-  print(isUpperCase(str) == false
-      ? "success ✅ => ${str} isUpperCase is false"
-      : "error ❌ => ${str} isUpperCase is not false");
-  str = "C";
-  print(isUpperCase(str) == true
-      ? "success ✅ => ${str} isUpperCase is true"
-      : "error ❌ => ${str} isUpperCase is not true");
-  str = "hello I AM DONALD";
-  print(isUpperCase(str) == false
-      ? "success ✅ => ${str} isUpperCase is false"
-      : "error ❌ => ${str} isUpperCase is not false");
-  str = "HELLO I AM DONALD";
-  print(isUpperCase(str) == true
-      ? "success ✅ => ${str} isUpperCase is true"
-      : "error ❌ => ${str} isUpperCase is not true");
-  str = "ACSKLDFJSgSKLDFJSKLDFJ";
-  print(isUpperCase(str) == false
-      ? "success ✅ => ${str} isUpperCase is false"
-      : "error ❌ => ${str} isUpperCase is not false");
-  str = "ACSKLDFJSGSKLDFJSKLDFJ";
-  print(isUpperCase(str) == true
-      ? "success ✅ => ${str} isUpperCase is true"
-      : "error ❌ => isUpperCase is not true");
+  var strings = {
+    "c": false,
+    "C": true,
+    "hello I AM DONALD": false,
+    "HELLO I AM DONALD": true,
+    "ACSKLDFJSgSKLDFJSKLDFJ": false,
+    "ACSKLDFJSGSKLDFJSKLDFJ": true
+  };
+
+  strings.entries.forEach((str) => (print(isUpperCase(str.key) == str.value
+      ? "success ✅ => ${str.key} isUpperCase is ${str.value}"
+      : "error ❌ => ${str.key} isUpperCase is not the correct value")));
 }
